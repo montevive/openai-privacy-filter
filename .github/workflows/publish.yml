@@ -1,3 +1,5 @@
+# Builds and pushes ghcr.io/montevive/openai-privacy-filter:{latest,sha-<short>}
+# on every push to main that touches the app sources, deploy/, or this file.
 name: Publish image
 
 on:
