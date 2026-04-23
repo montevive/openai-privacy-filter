@@ -3,10 +3,27 @@ import './App.css'
 import { DTYPE_LABELS, DTYPE_SIZES_MB, runDiagnostics } from './diagnostics'
 import type { Device, Diagnostics, Dtype, Entity, InMsg, OutMsg } from './types'
 
-const EXAMPLES = [
-  'My name is Harry Potter and my email is harry.potter@hogwarts.edu.',
-  'Call Alice at +34 600 123 456 or visit https://example.com/user/42.',
-  'API key: sk-proj-abc123def456ghijk789, issued 2024-10-03.',
+interface Example {
+  label: string
+  text: string
+}
+
+const EXAMPLES: Example[] = [
+  { label: 'EN · 1', text: 'My name is Harry Potter and my email is harry.potter@hogwarts.edu.' },
+  { label: 'EN · 2', text: 'Call Alice at +34 600 123 456 or visit https://example.com/user/42.' },
+  { label: 'EN · 3', text: 'API key: sk-proj-abc123def456ghijk789, issued 2024-10-03.' },
+  {
+    label: 'ES · 1',
+    text: 'Hola, soy María García López, mi email es maria.garcia@empresa.es y mi móvil el +34 612 345 678.',
+  },
+  {
+    label: 'ES · 2',
+    text: 'Envía el paquete a Calle Mayor 12, 2ºB, 28013 Madrid, antes del 15/03/2026.',
+  },
+  {
+    label: 'ES · 3',
+    text: 'Transferencia de 1.500 € para Juan Pérez Martínez, IBAN ES91 2100 0418 4502 0005 1332.',
+  },
 ]
 
 const ALL_DTYPES: Dtype[] = ['q4f16', 'q4', 'fp16', 'q8']
@@ -35,7 +52,7 @@ export default function App() {
   const nextId = useRef(0)
   const pendingId = useRef<number | null>(null)
   const [state, setState] = useState<LoadState>({ stage: 'detecting' })
-  const [text, setText] = useState(EXAMPLES[0])
+  const [text, setText] = useState(EXAMPLES[0].text)
   const [result, setResult] = useState<RunResult | null>(null)
   const [running, setRunning] = useState(false)
 
@@ -187,10 +204,11 @@ export default function App() {
               <button
                 key={i}
                 className="btn chip"
-                onClick={() => setText(ex)}
+                onClick={() => setText(ex.text)}
                 disabled={state.stage !== 'ready'}
+                title={ex.text}
               >
-                example {i + 1}
+                {ex.label}
               </button>
             ))}
           </div>
