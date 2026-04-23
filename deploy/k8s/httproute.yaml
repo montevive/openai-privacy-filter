@@ -1,0 +1,22 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: labs
+  namespace: labs
+  labels:
+    app.kubernetes.io/part-of: labs
+spec:
+  hostnames:
+    - labs.montevive.ai
+  parentRefs:
+    - name: montevive
+      namespace: envoy-gateway-system
+      sectionName: https-labs
+  rules:
+    - backendRefs:
+        - name: labs
+          port: 80
+      matches:
+        - path:
+            type: PathPrefix
+            value: /

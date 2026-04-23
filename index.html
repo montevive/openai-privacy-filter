@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="img/logo-montevive.png" />
+    <title>OpenAI Privacy Filter — Web Demo · Montevive.ai</title>
+    <meta
+      name="description"
+      content="OpenAI Privacy Filter runs 100% locally in your browser via transformers.js v4 and WebGPU. Your text never leaves your device. A Montevive.ai research demo."
+    />
+    <meta name="theme-color" content="#0b0f16" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f7f8fa" media="(prefers-color-scheme: light)" />
+
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme');
+          if (saved === 'dark' || saved === 'light') {
+            document.documentElement.setAttribute('data-theme', saved);
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="OpenAI Privacy Filter — Web Demo" />
+    <meta
+      property="og:description"
+      content="Run the OpenAI Privacy Filter PII detector entirely in your browser. 100% local inference via transformers.js v4 + WebGPU. No backend, no data transmission."
+    />
+    <meta property="og:image" content="img/logo-montevive.png" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="OpenAI Privacy Filter — Web Demo" />
+    <meta
+      name="twitter:description"
+      content="Run the OpenAI Privacy Filter PII detector entirely in your browser — 100% local inference."
+    />
+    <meta name="twitter:image" content="img/logo-montevive.png" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

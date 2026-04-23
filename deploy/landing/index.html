@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="logo-montevive.png" />
+    <title>Montevive Labs</title>
+    <meta
+      name="description"
+      content="Experiments and research demos from the Montevive team. 100% local inference, privacy-first AI."
+    />
+    <meta name="theme-color" content="#0b0f16" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f7f8fa" media="(prefers-color-scheme: light)" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Montevive Labs" />
+    <meta
+      property="og:description"
+      content="Experiments and research demos from the Montevive team. Privacy-first AI, running locally in your browser."
+    />
+    <meta property="og:image" content="logo-montevive.png" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <a href="https://montevive.ai" target="_blank" rel="noreferrer" class="logo-link" aria-label="Montevive.ai">
+          <img src="logo-montevive.png" alt="Montevive" class="logo" />
+        </a>
+        <h1>Montevive Labs</h1>
+        <p class="tagline">Experiments and research demos from the Montevive team.</p>
+        <p class="motto">Secure AI for secure decisions.</p>
+      </header>
+
+      <main class="demos">
+        <a href="/openai-privacy-demo/" class="demo-card">
+          <div class="card-header">
+            <span class="badge">WebGPU</span>
+            <span class="badge badge-alt">transformers.js v4</span>
+            <span class="badge badge-ok">100% local</span>
+          </div>
+          <h2>OpenAI Privacy Filter</h2>
+          <p>
+            PII detection running entirely in your browser. Detects names, emails, phones,
+            addresses, secrets, and more — with character-level spans and confidence scores.
+            No backend, no API calls, no data transmission.
+          </p>
+          <span class="cta">Open demo →</span>
+        </a>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-row">
+          <a href="https://montevive.ai" target="_blank" rel="noreferrer">montevive.ai</a>
+          <span class="sep">·</span>
+          <a href="mailto:info@montevive.ai">info@montevive.ai</a>
+          <span class="sep">·</span>
+          <a href="https://github.com/montevive" target="_blank" rel="noreferrer">GitHub</a>
+          <span class="sep">·</span>
+          <a href="https://www.linkedin.com/company/montevive-ai" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+        <div class="footer-row small dim">
+          All demos on this domain run client-side. No text, inputs, or results are
+          transmitted to any server.
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

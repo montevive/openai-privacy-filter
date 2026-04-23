@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: labs
+  namespace: labs
+  labels:
+    app.kubernetes.io/part-of: labs
+spec:
+  selector:
+    app: labs
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
