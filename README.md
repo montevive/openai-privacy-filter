@@ -41,12 +41,11 @@
   <a href="https://montevive.ai">Montevive.ai</a>
 </p>
 
-<!--
-  TODO: add a screenshot or demo GIF at docs/demo.png and uncomment:
 <p align="center">
-  <img src="docs/demo.png" alt="Screenshot of the demo running in Chrome" width="820" />
+  <a href="https://labs.montevive.ai/openai-privacy-demo/">
+    <img src="openai-privacy-filter-demo.gif" alt="OpenAI Privacy Filter — animated demo of the in-browser PII detector" width="820" />
+  </a>
 </p>
--->
 
 ---
 
